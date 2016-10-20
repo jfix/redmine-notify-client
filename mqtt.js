@@ -8,6 +8,8 @@ var cfg = {
   "status": {
     "closed": 5,
     "reopened": 8
+    "closed": "5",
+    "reopened": "8"
   },
   "priority": {
     "aboveNormal": 4
@@ -27,18 +29,22 @@ client.on('connect', function(){
       client.on("message", function(topic, message){
         var info = JSON.parse(message);
 
+        console.log("MESSAGE CONTENT: " + message);
         switch(info.type){
           case "change":
             if (info.new_status == cfg.status.closed) { // issue closed!!!
               player.play('./sounds/applause.mp3');
 
             } else if (info.new_status == cfg.status.reopenend) { // issue reopenend!!!!
+            } else if (info.new_status == cfg.status.reopened) { // issue reopenend!!!!
+              console.log("BOO");
               player.play('./sounds/boo.mp3');
             }
 
             break;
           case "creation":
             if (info.priority > cfg.priority.aboveNormal) { // new urgent or high issue
+              console.log("WATCHOUT");
               player.play('./sounds/siren.mp3');
             }
             break;
