@@ -16,3 +16,4 @@ Audio files found here:
 * Boo sound effect: https://www.youtube.com/watch?v=PS_cV18z67Y
 * Applause: http://soundbible.com/989-10-Second-Applause.html
 * Siren: http://soundbible.com/1355-Warning-Siren.html
+* Church bells: https://www.freesound.org/people/Yoram/sounds/172550/

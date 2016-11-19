@@ -53,6 +53,8 @@ client.on('connect', function(){
             case "creation":
               if (info.priority_id > cfg.priority.aboveNormal) { // new urgent or high issue
                 player.play('./sounds/siren.mp3');
+              } else if (info.issue_id % 100 === 0) { // if it's a round issue, let's make some noise!
+                player.play('./sounds/churchbells.mp3');
               }
               break;
             default:
